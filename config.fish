@@ -3,6 +3,7 @@ set fish_greeting
 
 # set term
 # use alacritty for 256 colors
+# https://github.com/alacritty/alacritty
 set TERM "xterm-256color"
 
 # import paths
@@ -27,7 +28,9 @@ bind \cP 'kill-word'
 # remove a word before cursor with control+o
 bind \co 'backward-kill-word'
 
-# fzf config
+# fzf config (suing fd)
+# https://github.com/junegunn/fzf
+# https://github.com/sharkdp/fd
 export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --color=always"
 export FZF_DEFAULT_OPTS="--ansi --height 100%"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -48,6 +51,7 @@ alias lolcat='/usr/bin/lolcat'
 alias waifu='/c/games/waifu2x/waifu2x.exe'
 alias proxy64='/c/Games/proxychains/x64/proxychains.exe -f "C:\Games\proxychains\proxychains.conf"'
 
+# converts seconds to minutes/hours when they are more than 60
 # https://github.com/fish-plugins/fish-humanize-duration
 function humanize_duration -d "Make a time interval human readable"
     if not string length --quiet $argv
@@ -74,6 +78,7 @@ function humanize_duration -d "Make a time interval human readable"
 end
 
 # install a nerd font if don't see symbols
+# i use caskadia cove NF
 # https://github.com/ryanoasis/nerd-fonts
 function fish_prompt
 	set -l last_status $status
