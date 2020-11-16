@@ -105,7 +105,7 @@ function fish_prompt
 	set_color normal
 	set_color -b "3c3c3c"
     	if test $CMD_DURATION
-    		set -l human_command (echo $CMD_DURATION | humanize_duration) 	
+    	set -l human_command (echo $CMD_DURATION | humanize_duration) 	
  		echo -n $human_command
  		echo -n " "
  		set_color normal
