@@ -1,7 +1,13 @@
+# disable fish welcome
 set fish_greeting
+
+# set term
 set TERM "xterm-256color"
+
+# import paths
 set -gx PATH /c/Games/mpv/ ~/scripts/ $PATH
 
+# remove broken web link paths so you don't need to put them in ""
 # set -U fish_features qmark-noglob 
 
 #set -l cyan (set_color cyan)
@@ -14,14 +20,18 @@ set -gx PATH /c/Games/mpv/ ~/scripts/ $PATH
 #set -l greyback (set_color -b "3c3c3c")
 ## https://fishshell.com/docs/current/cmds/set_color.html
 
+# remove a word behind cursor
 bind \cP 'kill-word'
+# remove a word after cursor
 bind \co 'backward-kill-word'
 
+# fzf config
 export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --color=always"
 export FZF_DEFAULT_OPTS="--ansi --height 100%"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d --hidden"
 
+# aliases
 alias notor='youtube-dl.exe --proxy ""'
 alias gmic='/c/Games/gmic/gmic.exe'
 alias mpv='mpv.exe'
@@ -36,6 +46,7 @@ alias lolcat='/usr/bin/lolcat'
 alias waifu='/c/games/waifu2x/waifu2x.exe'
 alias proxy64='/c/Games/proxychains/x64/proxychains.exe -f "C:\Games\proxychains\proxychains.conf"'
 
+# https://github.com/fish-plugins/fish-humanize-duration
 function humanize_duration -d "Make a time interval human readable"
     if not string length --quiet $argv
          set --erase argv
@@ -60,11 +71,10 @@ function humanize_duration -d "Make a time interval human readable"
     end
 end
 
+# install a nerd font if don't see symbols
+# https://github.com/ryanoasis/nerd-fonts
 function fish_prompt
 	set -l last_status $status
-#	set_color "3c3c3c"
-#	echo -n ""
-#	set_color normal
 	set_color -b "3c3c3c"
 	set_color "f4c100" 
 	echo -n " "
@@ -110,48 +120,3 @@ function fish_prompt
 	echo -n " "
  	end
 end
-
-#function fish_prompt
-#	set -l last_status $status
-#	set_color -b "3c3c3c"
-#	if test $last_status = 0
-#    	echo -n "   "
-#	else
-#		echo -n "   "
-#	end
-#	set_color "f4c100" 
-#	echo -n ""
-#	set_color "efa500" 
-#	echo -n " "
-#	set_color normal
-#	set_color -b "3c3c3c" 
-#	echo -n (date +%I:%M:%S)" "
-#	set_color "5fbe47"
-#	echo -n ""
-#	set_color "008982" 
-#	echo -n " "
-#	set_color normal 
-#	set_color -b "3c3c3c"
-#	echo -n (prompt_pwd)" "
-#	set_color "00a8ec"
-#	echo -n ""
-#	set_color "0070b9"
-#	echo -n " "
-#	set_color normal
-#	set_color -b "3c3c3c"
-#    if test $CMD_DURATION
-#    	set -l human_command (echo $CMD_DURATION | humanize_duration) 	
-# 		echo -n $human_command
-# 		echo -n " "
-# 		set_color normal
-# 		set_color -b "3c3c3c"
-# 		set_color "d583ae"
-#		echo -n ""
-#		set_color "db2b86"
-#		echo -n " "
-#		set_color normal
-# 		echo -n " "
-# 	end
-#end
-
-# LOOP_CONSTRUCT; [COMMANDS...] break; [COMMANDS...] end
