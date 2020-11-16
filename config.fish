@@ -22,9 +22,9 @@ set -gx PATH /c/Games/mpv/ ~/scripts/ $PATH
 #set -l greyback (set_color -b "3c3c3c")
 ## https://fishshell.com/docs/current/cmds/set_color.html
 
-# remove a word behind cursor
+# remove a word after cursor with control+p
 bind \cP 'kill-word'
-# remove a word after cursor
+# remove a word before cursor with control+o
 bind \co 'backward-kill-word'
 
 # fzf config
