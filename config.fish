@@ -9,6 +9,7 @@ set TERM "xterm-256color"
 set -gx PATH /c/Games/mpv/ ~/scripts/ $PATH
 
 # remove broken web link paths so you don't need to put them in ""
+# running this command in the terminal once is enough
 # set -U fish_features qmark-noglob 
 
 #set -l cyan (set_color cyan)
