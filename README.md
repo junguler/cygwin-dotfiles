@@ -1,2 +1,2 @@
-# dotfiles
+# cygwin-dotfiles
 collection my dotfiles
