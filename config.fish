@@ -117,7 +117,7 @@ function fish_prompt
 	set_color normal
 	set_color -b "3c3c3c"
 	if test $last_status = 0
-    	echo -n " "
+    		echo -n " "
 	else
 		echo -n " "
 	end
