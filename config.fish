@@ -2,6 +2,7 @@
 set fish_greeting
 
 # set term
+# use alacritty for 256 colors
 set TERM "xterm-256color"
 
 # import paths
