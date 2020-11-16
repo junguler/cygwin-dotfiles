@@ -28,7 +28,7 @@ bind \cP 'kill-word'
 # remove a word before cursor with control+o
 bind \co 'backward-kill-word'
 
-# fzf config (suing fd)
+# fzf config (using fd)
 # https://github.com/junegunn/fzf
 # https://github.com/sharkdp/fd
 export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --color=always"
@@ -77,9 +77,10 @@ function humanize_duration -d "Make a time interval human readable"
     end
 end
 
-# install a nerd font if don't see symbols
-# i use caskadia cove NF
+# install a nerd font if you don't see symbols
+# i use caskaydia cove NF
 # https://github.com/ryanoasis/nerd-fonts
+# https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode
 function fish_prompt
 	set -l last_status $status
 	set_color -b "3c3c3c"
@@ -103,8 +104,8 @@ function fish_prompt
 	echo -n " "
 	set_color normal
 	set_color -b "3c3c3c"
-    if test $CMD_DURATION
-    	set -l human_command (echo $CMD_DURATION | humanize_duration) 	
+    	if test $CMD_DURATION
+    		set -l human_command (echo $CMD_DURATION | humanize_duration) 	
  		echo -n $human_command
  		echo -n " "
  		set_color normal
