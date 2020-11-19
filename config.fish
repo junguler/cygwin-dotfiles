@@ -106,7 +106,7 @@ function fish_prompt
 		set_color normal
 		set_color -b "3c3c3c"
 		if test $CMD_DURATION
-    			set -l human_command (echo $CMD_DURATION | humanize_duration) 	
+    		set -l human_command (echo $CMD_DURATION | humanize_duration) 	
  		echo -n $human_command
  		set_color -b "3c3c3c"
  		set_color "d583ae"
@@ -126,7 +126,7 @@ function fish_prompt
 		echo -n (prompt_pwd)
 		echo -n "  "
 		if test $CMD_DURATION
-    			set -l human_command (echo $CMD_DURATION | humanize_duration) 	
+    		set -l human_command (echo $CMD_DURATION | humanize_duration) 	
  		echo -n $human_command
 		echo -n "  "
 		set_color normal
