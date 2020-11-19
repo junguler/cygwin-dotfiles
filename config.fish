@@ -83,48 +83,54 @@ end
 # https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode
 function fish_prompt
 	set -l last_status $status
-	set_color -b "3c3c3c"
-	set_color "f4c100" 
-	echo -n " "
-	set_color "efa500" 
-	echo -n " "
-	set_color normal
-	set_color -b "3c3c3c" 
-	echo -n (date +%I:%M:%S)" "
-	set_color "5fbe47"
-	echo -n ""
-	set_color "008982" 
-	echo -n " "
-	set_color normal 
-	set_color -b "3c3c3c"
-	echo -n (prompt_pwd)" "
-	set_color "00a8ec"
-	echo -n ""
-	set_color "0070b9"
-	echo -n " "
-	set_color normal
-	set_color -b "3c3c3c"
-    	if test $CMD_DURATION
-    	set -l human_command (echo $CMD_DURATION | humanize_duration) 	
- 		echo -n $human_command
- 		echo -n " "
- 		set_color normal
- 	set_color -b "3c3c3c"
- 	set_color "d583ae"
-	echo -n ""
-	set_color "db2b86"
-	echo -n " "
-	set_color normal
-	set_color -b "3c3c3c"
 	if test $last_status = 0
-    		echo -n " "
+		set_color -b "3c3c3c"
+		set_color "f4c100" 
+		echo -n " "
+		set_color "efa500" 
+		echo -n " "
+		set_color normal
+		set_color -b "3c3c3c" 
+		echo -n (date +%I:%M:%S)
+		set_color "5fbe47"
+		echo -n " "
+		set_color "008982" 
+		echo -n " "
+		set_color normal 
+		set_color -b "3c3c3c"
+		echo -n (prompt_pwd)
+		set_color "00a8ec"
+		echo -n " "
+		set_color "0070b9"
+		echo -n " "
+		set_color normal
+		set_color -b "3c3c3c"
+		if test $CMD_DURATION
+    			set -l human_command (echo $CMD_DURATION | humanize_duration) 	
+ 		echo -n $human_command
+ 		set_color -b "3c3c3c"
+ 		set_color "d583ae"
+		echo -n " "
+		set_color "db2b86"
+		echo -n " "
+		set_color normal
+		set_color -b "3c3c3c"
+		set_color normal
+		echo -n " "
+		end
 	else
-		echo -n " "
+		set_color -b "3c3c3c"
+		echo -n "  "
+		echo -n (date +%I:%M:%S)
+		echo -n "  "
+		echo -n (prompt_pwd)
+		echo -n "  "
+		if test $CMD_DURATION
+    			set -l human_command (echo $CMD_DURATION | humanize_duration) 	
+ 		echo -n $human_command
+		echo -n "  "
+		set_color normal
+		echo -n " "
 	end
-	set_color normal
-	set_color "3c3c3c"
-	echo -n ""
-	set_color normal
-	echo -n " "
  	end
 end
