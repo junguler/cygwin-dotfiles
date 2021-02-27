@@ -6,7 +6,7 @@ export ZSH="/home/Junguler/.oh-my-zsh"
 # i use caskaydia cove NF
 # https://github.com/ryanoasis/nerd-fonts
 # https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode
-PROMPT='$(if [[ $? == 0 ]]; then echo "%F{3}%K{237} %F{2}%f %D{%I:%M:%S} %F{6}%F{4}%f $(shrink_path -f) %F{5}%F{1} %f%k"; else echo "  %D{%H:%M:%S}  $(shrink_path -f)  "; fi) '
+PROMPT='$(if [[ $? == 0 ]]; then echo "%F{226}%K{237} %F{214}%f %D{%I:%M:%S} %F{154}%F{34}%f $(shrink_path -f) %F{45}%F{33}%f 0ms %F{177}%F{127} %f%k"; else echo "  %D{%H:%M:%S}  $(shrink_path -f)  "; fi) '
 
 # function for showing elapsed time in RPROMPT
 function preexec() {
@@ -29,7 +29,7 @@ function precmd() {
     else elapsed=${ms}ms
     fi
 
-    export RPROMPT="%K{237} ${elapsed} %k"
+	PROMPT='$(if [[ $? == 0 ]]; then echo "%F{226}%K{237} %F{214}%f %D{%I:%M:%S} %F{154}%F{34}%f $(shrink_path -f) %F{45}%F{33} %f${elapsed} %F{177}%F{127} %f%k "; else echo "  %D{%H:%M:%S}  $(shrink_path -f)  ${elapsed}   "; fi)'
     unset timer
   fi
 }
