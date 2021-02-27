@@ -8,7 +8,7 @@ export ZSH="/home/Junguler/.oh-my-zsh"
 # https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode
 PROMPT='$(if [[ $? == 0 ]]; then echo "%F{226}%K{237} %F{214}%f %D{%I:%M:%S} %F{154}%F{34}%f $(shrink_path -f) %F{45}%F{33}%f 0ms %F{177}%F{127} %f%k"; else echo "  %D{%H:%M:%S}  $(shrink_path -f)  "; fi) '
 
-# function for showing elapsed time in RPROMPT
+# function for showing elapsed time in PROMPT
 function preexec() {
   timer=$(date +%s%3N)
 }
